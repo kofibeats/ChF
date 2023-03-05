@@ -1,0 +1,26 @@
+n = 21
+use_bpm 96
+
+use_synth :piano
+88.times do
+  play n
+  sleep 0.125
+  n = n + 1
+end
+
+sleep 0.378
+
+88.times do
+  play n
+  sleep 0.0625
+  n = n - 1
+end
+
+use_synth :pluck
+with_fx :reverb do
+  88.times do
+    play n
+    sleep 0.0625
+    n = n + 1
+  end
+end
